@@ -1,0 +1,39 @@
+
+<a href="{% url 'member' %}">member</a>
+<a href="{% url 'signup' %}">signup</a>
+<a href="{% url 'login' %}">login</a>
+<a href="{% url 'password_change' %}">change_password</a>
+<a href="{% url 'logout' %}">logout</a>
+<a href="{% url 'password_reset' %}">password_reset</a>
+</br>
+</br>
+</br>
+{%if user.is_authenticated%}
+Hi {{user.username}}
+{% endif %}
+<h1> Hi students </h1>
+<div class="shadow-lg mr-10 ">
+    {% for coac in coach %}
+    <div class="font-bold">
+        Mr : {{ coac.coach_name }}
+    </div>
+    <div class="">
+        coach_level :  {{ coac.coach_level }}
+    </div>
+    <div class="">
+        time :  {{ coac.time }}
+    </div>
+    <div>location : {{ coac.location }}</div>
+    <div class-"">
+        level :  {{ coac.level }}
+    </div>
+    <div class="text-green-700 font-bold">
+        price :  ${{ coac.price }}
+    </div>
+    <a href=""><button class="text-red-500" type="submit">Add</button></a>
+</br>
+</br>
+</br>
+    {% endfor %}
+    
+</div>
